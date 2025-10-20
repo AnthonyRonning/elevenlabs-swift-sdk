@@ -44,7 +44,7 @@ final class ConnectionManager {
     func connect(
         details: TokenService.ConnectionDetails,
         enableMic: Bool,
-        graceTimeout: TimeInterval = 0.5, // Reduced to 500ms based on test results showing consistent timeouts
+        graceTimeout: TimeInterval = 2.0, // Increased to 2s to wait for agent audio track subscription
     ) async throws {
         let room = Room()
         self.room = room
